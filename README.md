@@ -4,6 +4,6 @@
 
  > C:\..\AppPy\env\Scripts>
 
-### digitar para ativar o ambiente virual -  activate.bat
+### digitar para ativar o ambiente virtual -  activate.bat
 
-### digitar para desativar o ambiente virual -  deactivate.bat
+### digitar para desativar o ambiente virtual -  deactivate.bat
