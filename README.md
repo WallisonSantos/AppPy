@@ -2,7 +2,7 @@
 
 ## Acessar
 
- > C:\Users\walli\OneDrive\Documentos\AppPy\env\Scripts>
+ > C:\..\AppPy\env\Scripts>
 
 ### digitar para ativar o ambiente virual -  activate.bat
 
