@@ -1,12 +1,16 @@
-# Notes
+# NOTES
 
-## Acessar
+## ACESSAR
 
  > C:\..\AppPy\env\Scripts>
 
-### digitar para ativar o ambiente virtual -  activate.bat
+# WINDOWS
 
-### digitar para desativar o ambiente virtual -  deactivate.bat
+# Acesse a pasta do projeto
+
+> cd C:\caminho\do\projeto
+> python -m venv env
+> \env\Scripts\activate.bat
+> deactivate
 
 ### Executar arquivo -  C:/../Documentos/AppPy/env/Scripts/python.exe app.py
-
