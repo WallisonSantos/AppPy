@@ -20,3 +20,23 @@ print(f'idade:{idade} nascimeto:{nasc} peso:{peso}')
 print(f'idade:{idade} nascimeto:{peso}   imc:{imc:.2f}')
 #
 #
+def warn(string):
+    print(
+        "[\033[33m w \033[0m] {}".format(string)
+    )
+warn(nome)
+#
+#
+def error(string):
+    print(
+        "[\033[31m ! \033[0m] {}".format(string)
+    )
+error(nome)
+#
+#
+def make_func(i):
+    def func():
+        return 'this is {0}'.format(i)
+    return func
+#
+#
