@@ -2,10 +2,6 @@
 #  Aula   01
 #  Módulo Básico
 #
-from curses.ascii import alt
-from mailbox import NotEmptyError
-
-
 print('@wallison', 'santos', sep='-', end=' enviar para ')
 print('\n@kareen', 'souza', sep='-', end=' ')
 print('\ndados de cpf: ', sep='-', end=' ')
