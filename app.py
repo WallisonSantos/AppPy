@@ -2,6 +2,7 @@
 #  Aula   01
 #  Módulo Básico
 #
+from curses.ascii import alt
 from mailbox import NotEmptyError
 
 
@@ -11,9 +12,14 @@ print('\ndados de cpf: ', sep='-', end=' ')
 print('824','176','070', sep='.', end='-18')
 #
 #
-idade  = input("Qual a sua idade ? ")
-nome   = input("Qual o seu nome ")
-
-print( 'idade:{i} nascimeto:{n} mês:{m}'.format(i=idade, n=nasc, m=mes))
-print(f'idade:{idade} nascimeto:{nascimeto} mês:{mes}')
-print(f'ome:{nome} peso:{peso} imc:{imc:.}')
+idade = int(input("Qual a sua idade ? "))
+peso  = int(input("Qual o seu peso ? "))
+altu  = int(input("Qual a sua altura ? "))
+nome  = input("Qual o seu nome ? ")
+imc   = peso / (altu * altu)
+nasc  = 2022-idade
+#
+#
+print( 'idade:{i}     nascimeto:{n}    peso:{m}'.format( i=idade, n=nasc, m=peso ))
+print(f'idade:{idade} nascimeto:{nasc} peso:{peso}')
+print(f'idade:{idade} nascimeto:{peso}  imc:{imc:.}')
