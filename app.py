@@ -5,14 +5,40 @@ def warn(string):
     print(
         "[\033[31m Caution \033[0m] {}".format(string)
     )
+
+
 def error(string):
     print(
         "[\033[31m !!! \033[0m] {}".format(string)
     )
+
+
 def error2(string):
     print(
         "[\033[31m OK \033[0m] {}".format(string)
     )
+
+
+def is_float(val):
+    if isinstance(val, float):
+        return True
+    if re.search(r'^\-{,1}[0-9]+\.{1}[0-9]+$', val):
+        return True
+
+    return False
+
+
+def is_int(val):
+    if isinstance(val, int):
+        return True
+    if re.search(r'^\-{,1}[0-9]+$', val):
+        return True
+
+    return False
+
+
+def is_number(val):
+    return is_int(val) or is_float(val)
 
 
 #
@@ -77,8 +103,6 @@ elem2 = input("numero dois: ")
 #
 
 
-
-
 print(elem1.isnumeric())
 print(elem2.isnumeric())
 #
@@ -89,4 +113,5 @@ if elem1.isdigit() and elem2.isdigit():
     restOfDiv = elem1 % elem2
     print(f"O resto da divisão de {elem1} por {elem2} é: {restOfDiv}")
 else:
-    print(f"Dados inseridos não permite a realização do cálculo ! => {elem1} e {elem2}")
+    print(
+        f"Dados inseridos não permite a realização do cálculo ! => {elem1} e {elem2}")
