@@ -106,7 +106,7 @@ elem2 = input("numero dois: ")
 print(elem1.isnumeric())
 print(elem2.isnumeric())
 #
-if elem1.isdigit() and elem2.isdigit():
+if elem1.isdigit() and elem2.isdigit() or is_float(elem1) and is_float(is_float):
     elem1 = int(elem1)
     elem2 = int(elem2)
 
