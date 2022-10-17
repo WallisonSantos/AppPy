@@ -1,12 +1,29 @@
-#  Aula   01
-#  Módulo Básico
+import re
+
+
+def warn(string):
+    print(
+        "[\033[31m Caution \033[0m] {}".format(string)
+    )
+def error(string):
+    print(
+        "[\033[31m !!! \033[0m] {}".format(string)
+    )
+def error2(string):
+    print(
+        "[\033[31m OK \033[0m] {}".format(string)
+    )
+
+
 #
-print("# Formatação de strings")
+#   Aula   01
+#   Módulo Básico
 #
+# print("# Formatação de strings")
 #
-print('\n@wallison', 'santos', sep='-', end=' enviar para ')
-print('\n@kareen', 'assis', sep='.', end=' via outlook')
-print('\n')
+# print('\n@wallison', 'santos', sep='-', end=' enviar para ')
+# print('\n@kareen', 'assis', sep='.', end=' via outlook')
+# print('\n')
 #
 idade = int(input("Qual a sua idade ? "))
 peso = int(input("Qual o seu peso ? "))
@@ -15,37 +32,20 @@ nome = input("Qual o seu nome ? ")
 imc = peso / (altu * altu)
 nasc = 2022-idade
 #
-print('idade:{i} nascimeto:{n} peso:{m}'.format(i=idade, n=nasc, m=peso))
-print(f'idade:{idade} nascimeto:{nasc} peso:{peso}')
-print(f'idade:{idade} nascimeto:{peso}   imc:{imc:.2f}')
+# print('idade:{i} nascimeto:{n} peso:{m}'.format(i=idade, n=nasc, m=peso))
+# print(f'idade:{idade} nascimeto:{nasc} peso:{peso}')
+# print(f'idade:{idade} nascimeto:{peso}   imc:{imc:.2f}')
 #
 #   Aula   02
 #   Módulo Básico
+#
+print("# Condicionais e Operadores relacionais")
 #
 # - Menos de 18,5 - abaixo do peso
 # - 18,5 a 24,9 - peso saudável
 # - 25 a 29,9 - sobrepeso
 # - 30 a 39,9 - obeso
 # - + de 40 - muito obeso (também conhecido como obeso mórbido)
-#
-def warn(string):
-   print(
-      "[\033[31m Caution \033[0m] {}".format(string)
-   )
-#
-def error(string):
-   print(
-      "[\033[31m !!! \033[0m] {}".format(string)
-   )
-#
-def error2(string):
-   print(
-      "[\033[31m OK \033[0m] {}".format(string)
-   )
-#
-#
-print("# Condicionais e Operadores relacionais")
-#
 #
 if (imc == 18.5):
     print("medida está abaixo")
@@ -66,3 +66,27 @@ else:
     print("tente novamente")
 #
 #
+# print(f"quantidade de caracteres nas duas frases: {len(frase1) + len(frase2)}")
+# print(f"quantidade de caracteres na frase 1: {len(frase1)} e na frase 2: {len(frase2)}")
+#
+# Is numerc, Is digit, Is decimal
+#
+elem1 = input("\nnumero um: ")
+elem2 = input("numero dois: ")
+#
+#
+
+
+
+
+print(elem1.isnumeric())
+print(elem2.isnumeric())
+#
+if elem1.isdigit() and elem2.isdigit():
+    elem1 = int(elem1)
+    elem2 = int(elem2)
+
+    restOfDiv = elem1 % elem2
+    print(f"O resto da divisão de {elem1} por {elem2} é: {restOfDiv}")
+else:
+    print(f"Dados inseridos não permite a realização do cálculo ! => {elem1} e {elem2}")
