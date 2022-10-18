@@ -51,12 +51,12 @@ def is_number(val):
 # print('\n@kareen', 'assis', sep='.', end=' via outlook')
 # print('\n')
 #
-idade = int(input("Qual a sua idade ? "))
-peso = int(input("Qual o seu peso ? "))
-altu = float(input("Qual a sua altura ? "))
-nome = input("Qual o seu nome ? ")
-imc = peso / (altu * altu)
-nasc = 2022-idade
+## idade = int(input("Qual a sua idade ? "))
+## peso = int(input("Qual o seu peso ? "))
+## altu = float(input("Qual a sua altura ? "))
+## nome = input("Qual o seu nome ? ")
+## imc = peso / (altu * altu)
+## nasc = 2022-idade
 #
 # print('idade:{i} nascimeto:{n} peso:{m}'.format(i=idade, n=nasc, m=peso))
 # print(f'idade:{idade} nascimeto:{nasc} peso:{peso}')
@@ -73,23 +73,23 @@ print("# Condicionais e Operadores relacionais")
 # - 30 a 39,9 - obeso
 # - + de 40 - muito obeso (também conhecido como obeso mórbido)
 #
-if (imc == 18.5):
-    print("medida está abaixo")
-    error(imc)
-elif (imc > 18.5 and imc < 24.9):
-    print("saudável")
-    error2(imc)
-elif (imc >= 24.9 and imc < 29.9):
-    print("sobrepeso")
-    error(imc)
-elif (imc >= 29.9 and imc < 39.9):
-    print("obeso")
-    error(imc)
-elif (imc >= 39.9):
-    print("muito obeso (também conhecido como obeso mórbido)")
-    warn(imc)
-else:
-    print("tente novamente")
+# if (imc == 18.5):
+##     print("medida está abaixo")
+# error(imc)
+# elif (imc > 18.5 and imc < 24.9):
+# print("saudável")
+# error2(imc)
+# elif (imc >= 24.9 and imc < 29.9):
+# print("sobrepeso")
+# error(imc)
+# elif (imc >= 29.9 and imc < 39.9):
+# print("obeso")
+# error(imc)
+# elif (imc >= 39.9):
+##     print("muito obeso (também conhecido como obeso mórbido)")
+# warn(imc)
+# else:
+##     print("tente novamente")
 #
 #
 # print(f"quantidade de caracteres nas duas frases: {len(frase1) + len(frase2)}")
@@ -98,20 +98,40 @@ else:
 # Is numerc, Is digit, Is decimal
 #
 elem1 = input("\nnumero um: ")
-elem2 = input("numero dois: ")
+elem2 = input("\nnumero dois: ")
+valor = True
 #
 #
-
-
-print(elem1.isnumeric())
-print(elem2.isnumeric())
+# print(elem1.isnumeric())
+# print(elem2.isnumeric())
 #
-if elem1.isdigit() and elem2.isdigit() or is_float(elem1) and is_float(is_float):
+if elem1.isdigit() and elem2.isdigit() or is_float(elem1) and is_float(elem2):
+    elem1 = int(elem1)
+    elem2 = int(elem2)
+    restOfDiv = elem1 % elem2
+    if restOfDiv == 1:
+        impar = True
+    else:
+        impar = False
+    print(
+        f"O resto da divisão de {elem1} por {elem2} é: {restOfDiv} - Impar: {impar}")
+else:
+    print(
+        f"Dados inseridos não permite a realização do cálculo ! => {elem1} e {elem2}")
+#
+#
+try:
     elem1 = int(elem1)
     elem2 = int(elem2)
 
     restOfDiv = elem1 % elem2
     print(f"O resto da divisão de {elem1} por {elem2} é: {restOfDiv}")
-else:
+except:
     print(
         f"Dados inseridos não permite a realização do cálculo ! => {elem1} e {elem2}")
+#
+#
+if valor:
+    print("'retorno esperado ! '")
+else:
+    pass
