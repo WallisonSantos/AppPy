@@ -82,7 +82,10 @@ if is_number(peso) or is_number(altu):
 
 print("# Análises financeiras")
 
-data = (3, 6, 9, 12)
-fig, simple_chart = plt.subplots()
-simple_chart.plot(data)
+selic = sgs.get(('selic', 432), start = '2022-10-01')
+
+plt.style.use('ggplot')
+selic.plot(figsize = (15, 10))
+
+plt.title("Taxa de juros - Meta Selic definida pelo Copom - %a.a")
 plt.show()
