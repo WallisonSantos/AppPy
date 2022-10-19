@@ -1,23 +1,16 @@
+import random
 import re
 
-
-def warn(string):
-    print(
-        "[\033[31m Caution \033[0m] {}".format(string)
-    )
+import pandas as pd
+from bcb import sgs
+from matplotlib import pyplot as plt
 
 
-def error(string):
-    print(
-        "[\033[31m !!! \033[0m] {}".format(string)
-    )
+def warn(string): print(f'[\033[31m Caution \033[0m] {string:.2f}')
 
+def error(string):print(f'[\033[31m !!! \033[0m] {string:.2f}')
 
-def error2(string):
-    print(
-        "[\033[31m OK \033[0m] {}".format(string)
-    )
-
+def error2(string):print(f'[\033[31m OK \033[0m] {string:.2f}')
 
 def is_float(val):
     if isinstance(val, float):
@@ -27,7 +20,6 @@ def is_float(val):
 
     return False
 
-
 def is_int(val):
     if isinstance(val, int):
         return True
@@ -36,102 +28,61 @@ def is_int(val):
 
     return False
 
-
 def is_number(val):
     return is_int(val) or is_float(val)
 
 
-#
-#   Aula   01
-#   Módulo Básico
-#
-# print("# Formatação de strings")
-#
-# print('\n@wallison', 'santos', sep='-', end=' enviar para ')
-# print('\n@kareen', 'assis', sep='.', end=' via outlook')
-# print('\n')
-#
-## idade = int(input("Qual a sua idade ? "))
-## peso = int(input("Qual o seu peso ? "))
-## altu = float(input("Qual a sua altura ? "))
-## nome = input("Qual o seu nome ? ")
-## imc = peso / (altu * altu)
-## nasc = 2022-idade
-#
-# print('idade:{i} nascimeto:{n} peso:{m}'.format(i=idade, n=nasc, m=peso))
-# print(f'idade:{idade} nascimeto:{nasc} peso:{peso}')
-# print(f'idade:{idade} nascimeto:{peso}   imc:{imc:.2f}')
-#
-#   Aula   02
-#   Módulo Básico
-#
 print("# Condicionais e Operadores relacionais")
-#
-# - Menos de 18,5 - abaixo do peso
-# - 18,5 a 24,9 - peso saudável
-# - 25 a 29,9 - sobrepeso
-# - 30 a 39,9 - obeso
-# - + de 40 - muito obeso (também conhecido como obeso mórbido)
-#
-# if (imc == 18.5):
-##     print("medida está abaixo")
-# error(imc)
-# elif (imc > 18.5 and imc < 24.9):
-# print("saudável")
-# error2(imc)
-# elif (imc >= 24.9 and imc < 29.9):
-# print("sobrepeso")
-# error(imc)
-# elif (imc >= 29.9 and imc < 39.9):
-# print("obeso")
-# error(imc)
-# elif (imc >= 39.9):
-##     print("muito obeso (também conhecido como obeso mórbido)")
-# warn(imc)
-# else:
-##     print("tente novamente")
-#
-#
-# print(f"quantidade de caracteres nas duas frases: {len(frase1) + len(frase2)}")
-# print(f"quantidade de caracteres na frase 1: {len(frase1)} e na frase 2: {len(frase2)}")
-#
-# Is numerc, Is digit, Is decimal
-#
-elem1 = input("\nnumero um: ")
-elem2 = input("\nnumero dois: ")
-valor = True
-#
-#
-# print(elem1.isnumeric())
-# print(elem2.isnumeric())
-#
-if elem1.isdigit() and elem2.isdigit() or is_float(elem1) and is_float(elem2):
-    elem1 = int(elem1)
-    elem2 = int(elem2)
-    restOfDiv = elem1 % elem2
-    if restOfDiv == 1:
-        impar = True
-    else:
-        impar = False
-    print(
-        f"O resto da divisão de {elem1} por {elem2} é: {restOfDiv} - Impar: {impar}")
-else:
-    print(
-        f"Dados inseridos não permite a realização do cálculo ! => {elem1} e {elem2}")
-#
-#
-try:
-    elem1 = int(elem1)
-    elem2 = int(elem2)
 
-    restOfDiv = elem1 % elem2
-    print(f"O resto da divisão de {elem1} por {elem2} é: {restOfDiv}")
-except:
-    print(
-        f"Dados inseridos não permite a realização do cálculo ! => {elem1} e {elem2}")
-#
-#
-if valor:
-    print("'retorno esperado ! '")
-else:
-    pass
+abaixo = "Menos de 18,5 - abaixo do peso"
+saudavel = "18,5 a 24,9 - peso saudável"
+sobrepeso = "25 a 29,9 - sobrepeso"
+obeso = "30 a 39,9 - obeso"
+morbido = "40 ou mais - muito obeso (também conhecido como obeso mórbido)"
+
+peso = 80 # input("Digite o seu peso: ")
+altu = 1.80 # input("Digite a sua altura: ")
+numc = random.randint(10, 20)
+
+if is_number(peso) or is_number(altu):
+
+#    if is_int(peso) and is_int(altu):
+#        peso = int(peso)
+#        altu = int(altu)
+#    elif is_float(peso) and is_float(altu):
+#        peso = float(peso)
+#        altu = float(altu)
+#    elif is_int(peso) and is_float(altu):
+#        peso = int(peso)
+#        altu = float(altu)
+#    elif is_float(peso) and is_int(altu):
+#        peso = float(peso)
+#        altu = int(altu)
+
+    imc = peso / (altu * altu)
+
+    if (imc == 18.5):
+        print("medida está abaixo")
+        error(imc)
+    elif (imc > 18.5 and imc < 24.9):
+        print("saudável")
+        error2(imc)
+    elif (imc >= 24.9 and imc < 29.9):
+        print("sobrepeso")
+        error(imc)
+    elif (imc >= 29.9 and imc < 39.9):
+        print("obeso")
+        error(imc)
+    elif (imc >= 39.9):
+        print("muito obeso (também conhecido como obeso mórbido)")
+        warn(imc)
+    else:
+        print("tente novamente")
+
+
+print("# Análises financeiras")
+
+data = (3, 6, 9, 12)
+fig, simple_chart = plt.subplots()
+simple_chart.plot(data)
+plt.show()
