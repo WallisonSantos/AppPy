@@ -33,6 +33,7 @@ def is_number(val):
 
 print("# Condicionais e Operadores relacionais")
 
+
 abaixo = "Menos de 18,5 - abaixo do peso"
 saudavel = "18,5 a 24,9 - peso saudável"
 sobrepeso = "25 a 29,9 - sobrepeso"
