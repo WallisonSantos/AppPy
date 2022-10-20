@@ -14,3 +14,14 @@
 > deactivate
 
 ##### Executar arquivo -  C:/../Documentos/AppPy/env/Scripts/python.exe app.py
+
+pip install html5lib
+pip install webdriver-manager
+pip install python-bcb
+pip install pandas-datareader
+pip install mplfinance
+pip install selenium
+pip install FPDF
+pip install mplcyberpunk
+pip install python-dotenv
+pip install pywin32

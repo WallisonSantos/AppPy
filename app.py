@@ -1,9 +1,24 @@
-import random
-import re
-
 import pandas as pd
+import numpy as np
+from pandas_datareader import data as pdr
+from datetime import datetime
+from datetime import timedelta
+import mplfinance as mpf
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
+import matplotlib.dates as mdates
+import mplcyberpunk
+import time
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+import requests
+from bcb import currency
 from bcb import sgs
-from matplotlib import pyplot as plt
+from fpdf import FPDF
+from matplotlib.dates import date2num
+import warnings
+warnings.filterwarnings('ignore')
 
 
 def warn(string): print(f'[\033[31m Caution \033[0m] {string:.2f}')
