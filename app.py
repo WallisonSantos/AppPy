@@ -31,7 +31,6 @@ def is_int(val):
 def is_number(val):
     return is_int(val) or is_float(val)
 
-
 print("# Condicionais e Operadores relacionais")
 
 abaixo = "Menos de 18,5 - abaixo do peso"
@@ -78,7 +77,6 @@ if is_number(peso) or is_number(altu):
         warn(imc)
     else:
         print("tente novamente")
-
 
 print("# Análises financeiras")
 
