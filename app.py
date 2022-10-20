@@ -1,6 +1,8 @@
+import re
+import random
+from pandas_datareader import data as pdr
 import pandas as pd
 import numpy as np
-from pandas_datareader import data as pdr
 from datetime import datetime
 from datetime import timedelta
 import mplfinance as mpf
