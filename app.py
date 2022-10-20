@@ -7,9 +7,7 @@ from matplotlib import pyplot as plt
 
 
 def warn(string): print(f'[\033[31m Caution \033[0m] {string:.2f}')
-
 def error(string):print(f'[\033[31m !!! \033[0m] {string:.2f}')
-
 def error2(string):print(f'[\033[31m OK \033[0m] {string:.2f}')
 
 def is_float(val):
