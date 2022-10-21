@@ -1,10 +1,10 @@
+import matplotlib.pyplot as plt
+import mplcyberpunk
+import numpy as np
+from pandas_datareader import data as pdr
 import time
 from datetime import datetime, timedelta
 
-import numpy as np
-import mplcyberpunk
-import matplotlib.pyplot as plt
-from pandas_datareader import data as pdr
 
 print("# Análises financeiras")
 plt.style.use('ggplot')
