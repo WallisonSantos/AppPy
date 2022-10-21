@@ -4,7 +4,7 @@ import numpy as np
 from pandas_datareader import data as pdr
 import time
 from datetime import datetime, timedelta
-
+from bcb import sgs
 
 print("# Análises financeiras")
 plt.style.use('ggplot')
