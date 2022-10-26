@@ -9,7 +9,7 @@
 ##### Acesse a pasta do projeto
 
 > cd C:\caminho\do\projeto
-> python -m venv env ... ou python3.10 -m venv studysession
+> python -m venv env ... ou python3 -m venv venv
 > \env\Scripts\activate.bat
 > deactivate
 
